@@ -1,0 +1,22 @@
+---
+# tasks file for ansible-role-plex
+
+- name: Add Plex repo
+  yum_repository:
+    name: PlexRepo
+    description: Plex Media Server repo
+    baseurl: "{{ plex_baseurl }}"
+    gpgkey: "{{ plex_gpgurl }}"
+    gpgcheck: yes
+    enabled: yes
+
+- name: Install Plex
+  yum:
+    name: plexmediaserver
+    state: latest
+
+- name: Set to start on boot
+  service:
+    name: plexmediaserver
+    enabled: yes
+    state: started

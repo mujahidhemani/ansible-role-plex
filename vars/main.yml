@@ -1,0 +1,5 @@
+---
+# vars file for ansible-role-plex
+
+plex_baseurl: https://downloads.plex.tv/repo/rpm/$basearch/
+plex_gpgurl: https://downloads.plex.tv/plex-keys/PlexSign.key
