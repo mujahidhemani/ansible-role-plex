@@ -4,7 +4,7 @@
 - name: Add Plex repo
   yum_repository:
     name: PlexRepo
-    description: Plex Media Server repo
+    file: plex.repo
     baseurl: "{{ plex_baseurl }}"
     gpgkey: "{{ plex_gpgurl }}"
     gpgcheck: yes
